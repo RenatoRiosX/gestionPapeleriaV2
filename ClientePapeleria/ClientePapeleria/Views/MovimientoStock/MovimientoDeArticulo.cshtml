@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ClientePapeleria.Models.MovimientosArticuloTipo>
+
+@{
+    ViewData["Title"] = "MovimientoDeArticulo";
+}
+
+<h1>Movimiento de Artículo</h1>
+<hr>
+<partial name="_Mensajes" />
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="MovimientoDeArticulo" method="post">
+		    <div class="form-group">
+		        <label for="idArticulo">ID Artículo:</label>
+		        <input type="number" class="form-control" id="idArticulo" name="idArticulo" required />
+		    </div>
+		    <div class="form-group">
+		        <label for="idTipoMovimiento">ID Tipo Movimiento:</label>
+		        <input type="number" class="form-control" id="idTipoMovimiento" name="idTipoMovimiento" required />
+		    </div>
+		    <div class="form-group">
+		        <label for="pagina">Página:</label>
+		        <input type="number" class="form-control" id="pagina" name="pagina" required />
+		    </div>
+		    <button type="submit" class="btn btn-primary my-2">Buscar Movimientos</button>
+		</form>
+	</div>
+</div>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Id)</th>
+                <th>@Html.DisplayNameFor(model => model.FechaMovimiento)</th>
+                <th>@Html.DisplayNameFor(model => model.ArticuloId)</th>
+                <th>@Html.DisplayNameFor(model => model.TipoMovimientoId)</th>
+                <th>@Html.DisplayNameFor(model => model.Cantidad)</th>
+                <th>@Html.DisplayNameFor(model => model.EncargadoId)</th>
+                <th>@Html.DisplayNameFor(model => model.NombreTipo)</th>
+                <th>@Html.DisplayNameFor(model => model.EsAumentoCantidad)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                    <td>@Html.DisplayFor(modelItem => item.FechaMovimiento)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ArticuloId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.TipoMovimientoId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Cantidad)</td>
+                    <td>@Html.DisplayFor(modelItem => item.EncargadoId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.NombreTipo)</td>
+                    <td>@Html.DisplayFor(modelItem => item.EsAumentoCantidad)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

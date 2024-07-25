@@ -1,0 +1,53 @@
+﻿@model ClientePapeleria.Models.MovimientoDeArticulos
+
+
+<h1>Artículos Movidos en Periodo</h1>
+<hr>
+<partial name="_Mensajes" />
+<div class="row">
+	<div class="col-md-4">
+        <form asp-action="MovimientoDeArticulosEnPeriodo" method="post">
+			<div class="form-group">
+				<label for="FechaInicio">Fecha de Inicio:</label>
+				<input type="date" class="form-control" id="FechaInicio" name="FechaInicio" asp-for="FechaInicio" required />
+			</div>
+			<div class="form-group">
+				<label for="FechaFin">Fecha de Fin:</label>
+				<input type="date" class="form-control" id="FechaFin" name="FechaFin" asp-for="FechaFin" required />
+			</div>
+			<div class="form-group">
+				<label for="Pagina">Página:</label>
+				<input type="number" class="form-control" id="Pagina" name="Pagina" asp-for="Pagina" required />
+			</div>
+			<button type="submit" class="btn btn-primary my-2">Buscar</button>
+		</form>
+	</div>
+</div>
+
+
+@if (Model != null && Model.Articulos.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Codigo</th>
+                <th>PrecioActual</th>
+                <th>Descripcion</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Articulos)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Codigo)</td>
+                    <td>@Html.DisplayFor(modelItem => item.PrecioActual)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Descripcion)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
