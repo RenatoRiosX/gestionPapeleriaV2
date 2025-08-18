@@ -1,6 +1,12 @@
-# gestionPapeleriaV2
-Sistema de gestión de una papeleria. Obligatorio 2 de programación 3 de ATI ORT. Desarrollado por Renato Ríos y Manuel Martínez.
+# Aplicación de Gestión de Inventario con Arquitectura Limpia
+Desarrollo de una aplicación completa en C# para la gestión de una papelería, donde el foco principal fue la aplicación de patrones de diseño y arquitecturas de software avanzadas.
 
-El sistema cuenta con: Login de usuarios, Logout, Registro de movimiento de stock, Consulta de Movimientos (movimientos realizados a un artículo, artículos movidos en un periodo y resumen de cantidades movidas).
+Aprendizajes y logros destacados:
 
-Metodologías de desarrollo empleadas: Arquitectura limpia, domain driven design y MVC.
+* Implementación de los principios de Arquitectura Limpia y Domain-Driven Design (DDD) para crear una base de código desacoplada, testeable y fácil de mantener.
+
+* Estructuración del proyecto siguiendo el patrón Model-View-Controller (MVC), separando eficazmente la lógica de negocio, los datos y la presentación.
+
+* Desarrollo de módulos de negocio críticos, incluyendo un sistema de autenticación de usuarios y un robusto control de inventario con funcionalidades para el seguimiento y consulta de movimientos de stock.
+
+* Este proyecto fue una experiencia práctica fundamental para aplicar la teoría de la ingeniería de software en la construcción de una solución de software que no solo funciona, sino que está diseñada para ser escalable y duradera.
